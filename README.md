@@ -14,8 +14,8 @@ Stylus:
 
     #element
       -d block
-      -w 150
-      -h 100
+      -w 150px
+      -h 100px
       b-radius 7px
       -br 1px solid #eee
 
@@ -30,8 +30,8 @@ CSS:
     }
     #element {
       display: block;
-      width: 150;
-      height: 100;
+      width: 150px;
+      height: 100px;
       -webkit-border-radius: 7px;
       -moz-border-radius: 7px;
       -o-border-radius: 7px;
