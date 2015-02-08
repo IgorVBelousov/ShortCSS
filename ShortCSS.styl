@@ -1,0 +1,240 @@
+// Synonym
+
+// margin
+-m()
+  margin arguments
+-mt()
+  margin-top arguments
+-mb()
+  margin-bottom arguments
+-ml()
+  margin-left arguments
+-mr()
+  margin-right arguments
+
+// padding
+-p()
+  padding arguments
+-pt()
+  padding-top arguments
+-pb()
+  padding-bottom arguments
+-pl()
+  padding-left arguments
+-pr()
+  padding-right arguments
+  
+// width
+-w()
+  width arguments
+-wmin()
+  min-width arguments
+-wmax()
+  max-width arguments
+
+// height
+-h()
+  height arguments
+-hmin()
+  min-height arguments
+-hmax()
+  max-height arguments
+  
+// position
+-pos()
+  position arguments
+-t()
+  top arguments
+-l()
+  left arguments
+-b()
+  bottom arguments
+-r()
+  right arguments
+
+// background
+-bg()
+  background arguments
+-bga()
+  background-attachment arguments
+-bgc()
+  background-color arguments
+-bgi()
+  background-image arguments
+-bgo()
+  background-origin arguments
+-bgp()
+  background-position arguments
+-bgr()
+  background-repeat arguments
+
+// border
+-br()
+  border arguments
+-brc()
+  border-color arguments
+-brs()
+  border-style arguments
+-brw()
+  border-width arguments
+  
+-brt()
+  border-top arguments
+-brtc()
+  border-top-color arguments
+-brts()
+  border-top-style arguments
+-brtw()
+  border-top-width arguments
+
+-brb()
+  border-bottom arguments
+-brbc()
+  border-bottom-color arguments
+-brbs()
+  border-bottom-style arguments
+-brbw()
+  border-bottom-width arguments
+
+-brl()
+  border-left arguments
+-brlc()
+  border-left-color arguments
+-brls()
+  border-left-style arguments
+-brlw()
+  border-left-width arguments
+
+-brr()
+  border-right arguments
+
+-brcol()
+  border-collapse arguments
+  
+
+//color
+-c()
+  color arguments
+
+//display
+-d()
+  display arguments
+
+//float
+-fl()
+  float arguments
+
+//font
+-f()
+  font arguments
+-ff()
+  font-family arguments
+-fs()
+  font-size arguments
+-fst()
+  font-style arguments
+-fv()
+  font-variant arguments
+-fw()
+  font-weight arguments
+
+//text
+-td()
+  text-decoration arguments
+-ts()
+  text-shadow arguments
+-ta()
+  text-align arguments
+-to()
+  text-overflow arguments
+
+//list
+-lis()
+  list-style arguments
+-lip()
+  list-style-position arguments
+
+
+-lh()
+  line-height arguments
+
+//vertical-align
+-va()
+  vertical-align arguments
+
+//z-index
+-z()
+  z-index arguments
+
+
+// Hacks
+
+b-radius()
+  -webkit-border-radius: arguments
+  -moz-border-radius: arguments
+  -o-border-radius: arguments
+  -ms-border-radius: arguments
+  -khtml-border-radius: arguments
+  border-radius: arguments
+
+l-gradient()
+  -bgi -moz-linear-gradient(arguments)
+  -bgi -webkit-linear-gradient(arguments)
+  -bgi -o-linear-gradient(arguments)
+  -bgi -ms-linear-gradient(arguments)
+  -bgi linear-gradient(arguments)
+
+r-l-gradient()
+  -bgi -moz-repeating-linear-gradient(arguments)
+  -bgi -webkit-repeating-linear-gradient(arguments)
+  -bgi -o-repeating-linear-gradient(arguments)
+  -bgi -ms-repeating-linear-gradient(arguments)
+  -bgi repeating-linear-gradient(arguments)
+
+r-gradient()
+  -bgi -moz-radial-gradient(arguments)
+  -bgi -webkit-radial-gradient(arguments)
+  -bgi -o-radial-gradient(arguments)
+  -bgi -ms-radial-gradient(arguments)
+  -bgi radial-gradient(arguments)
+
+bx-shadow()
+  -moz-box-shadow arguments
+  -webkit-box-shadow arguments
+  box-shadow arguments
+
+bg-clip()
+  -webkit-background-clip arguments
+  -moz-background-clip arguments
+  background-clip arguments
+
+bg-size()
+  -moz-background-size arguments
+  -webkit-background-size arguments
+  -o-background-size arguments
+  background-size arguments
+
+transit()
+  -webkit-transition arguments
+  -moz-transition arguments
+  -o-transition arguments
+  transition arguments
+
+opacit()
+    -ms-filter unquote('"progid:DXImageTransform.Microsoft.Alpha(Opacity='+arguments*100+')"') 
+    filter unquote('alpha(opacity='+arguments*100+')')
+    -moz-opacity arguments 
+    -khtml-opacity arguments 
+    opacity arguments
+
+_h16 = 'h1,h2,h3,h4,h5,h6'
+_h15 = 'h1,h2,h3,h4,h5'
+_h14 = 'h1,h2,h3,h4'
+_h13 = 'h1,h2,h3'
+
+_h26 = 'h2,h3,h4,h5,h6'
+_h25 = 'h2,h3,h4,h5'
+_h24 = 'h2,h3,h4'
+
+_h36 = 'h3,h4,h5,h6'
+_h35 = 'h3,h4,h5'
