@@ -1,60 +1,88 @@
-// Synonym
+/*
+ * Config
+ */
+
+// default unit
+__units ?= 0px
+
+/*
+ * Internal
+ */
+
+--unit(arg)
+  if (arg is a 'unit')
+    if arg == 0
+      0
+    else
+      unit(arg) ? arg : arg + __units
+  else
+    arg
+
+--units(args)
+  out = ''
+  for num in args
+    out = out + ' ' + --unit(num)
+  unquote(out)
+
+/*
+ * Synonym
+ */
 
 // margin
 -m()
-  margin arguments
+  margin --units(arguments)
 -mt()
-  margin-top arguments
+  margin-top --units(arguments)
 -mb()
-  margin-bottom arguments
+  margin-bottom --units(arguments)
 -ml()
-  margin-left arguments
+  margin-left --units(arguments)
 -mr()
-  margin-right arguments
+  margin-right --units(arguments)
 
 // padding
 -p()
-  padding arguments
+  padding --units(arguments)
 -pt()
-  padding-top arguments
+  padding-top --units(arguments)
 -pb()
-  padding-bottom arguments
+  padding-bottom --units(arguments)
 -pl()
-  padding-left arguments
+  padding-left --units(arguments)
 -pr()
-  padding-right arguments
+  padding-right --units(arguments)
   
 // width
 -w()
-  width arguments
+  width --units(arguments)
 -wmin()
-  min-width arguments
+  min-width --units(arguments)
 -wmax()
-  max-width arguments
+  max-width --units(arguments)
 
 // height
 -h()
-  height arguments
+  height --units(arguments)
 -hmin()
-  min-height arguments
+  min-height --units(arguments)
 -hmax()
-  max-height arguments
+  max-height --units(arguments)
   
 // position
 -pos()
   position arguments
 -t()
-  top arguments
+  top --units(arguments)
 -l()
-  left arguments
+  left --units(arguments)
 -b()
-  bottom arguments
+  bottom --units(arguments)
 -r()
-  right arguments
+  right --units(arguments)
 
 // background
 -bg()
-  background arguments
+  background --units(arguments)
 -bga()
   background-attachment arguments
 -bgc()
@@ -64,49 +92,59 @@
 -bgo()
   background-origin arguments
 -bgp()
-  background-position arguments
+  background-position --units(arguments)
 -bgr()
   background-repeat arguments
 
 // border
 -br()
-  border arguments
+  border --units(arguments)
 -brc()
   border-color arguments
 -brs()
   border-style arguments
 -brw()
-  border-width arguments
-  
+  border-width --units(arguments)
+
+// border-top
 -brt()
-  border-top arguments
+  border-top --units(arguments)
 -brtc()
   border-top-color arguments
 -brts()
   border-top-style arguments
 -brtw()
-  border-top-width arguments
+  border-top-width --units(arguments)
 
+// border-bottom
 -brb()
-  border-bottom arguments
+  border-bottom --units(arguments)
 -brbc()
   border-bottom-color arguments
 -brbs()
   border-bottom-style arguments
 -brbw()
-  border-bottom-width arguments
+  border-bottom-width --units(arguments)
 
+// border-left
 -brl()
-  border-left arguments
+  border-left --units(arguments)
 -brlc()
   border-left-color arguments
 -brls()
   border-left-style arguments
 -brlw()
-  border-left-width arguments
+  border-left-width --units(arguments)
 
+// border-right
 -brr()
-  border-right arguments
+  border-right --units(arguments)
+-brrc()
+  border-right-color arguments
+-brrs()
+  border-right-style arguments
+-brrw()
+  border-right-width --units(arguments)
 
 -brcol()
   border-collapse arguments
@@ -126,11 +164,18 @@
 
 //font
 -f()
-  font arguments
+  out = ''
+  weight = 100 200 300 400 500 600 700 800 900
+  for num in arguments
+    if num in weight
+      out = out + ' ' + num
+    else
+      out = out + ' ' + --unit(num)
+  font unquote(out)
 -ff()
   font-family arguments
 -fs()
-  font-size arguments
+  font-size --units(arguments)
 -fst()
   font-style arguments
 -fv()
@@ -142,7 +187,7 @@
 -td()
   text-decoration arguments
 -ts()
-  text-shadow arguments
+  text-shadow --units(arguments)
 -ta()
   text-align arguments
 -to()
@@ -156,7 +201,7 @@
 
 
 -lh()
-  line-height arguments
+  line-height --units(arguments)
 
 //vertical-align
 -va()
@@ -167,15 +212,17 @@
   z-index arguments
 
 
-// Hacks
+/*
+ * Hacks
+ */
 
 b-radius()
-  -webkit-border-radius: arguments
-  -moz-border-radius: arguments
-  -o-border-radius: arguments
-  -ms-border-radius: arguments
-  -khtml-border-radius: arguments
-  border-radius: arguments
+  -webkit-border-radius: --units(arguments)
+  -moz-border-radius: --units(arguments)
+  -o-border-radius: --units(arguments)
+  -ms-border-radius: --units(arguments)
+  -khtml-border-radius: --units(arguments)
+  border-radius: --units(arguments)
 
 l-gradient()
   -bgi -moz-linear-gradient(arguments)
@@ -199,9 +246,9 @@ r-gradient()
   -bgi radial-gradient(arguments)
 
 bx-shadow()
-  -moz-box-shadow arguments
-  -webkit-box-shadow arguments
-  box-shadow arguments
+  -moz-box-shadow --units(arguments)
+  -webkit-box-shadow --units(arguments)
+  box-shadow --units(arguments)
 
 bg-clip()
   -webkit-background-clip arguments
@@ -209,10 +256,10 @@ bg-clip()
   background-clip arguments
 
 bg-size()
-  -moz-background-size arguments
-  -webkit-background-size arguments
-  -o-background-size arguments
-  background-size arguments
+  -moz-background-size --units(arguments)
+  -webkit-background-size --units(arguments)
+  -o-background-size --units(arguments)
+  background-size --units(arguments)
 
 transit()
   -webkit-transition arguments
