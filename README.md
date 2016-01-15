@@ -1,7 +1,7 @@
 ShortCSS
 ========
 
-Библиотека [Stylus](http://learnboost.github.io/stylus/) для короткой записи CSS-свойств
+Библиотека [Stylus](http://stylus-lang.com) для короткой записи CSS-свойств
 
 Stylus:
 
